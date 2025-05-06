@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ - MJS Company, LLC</title>
+  <meta name="description" content="MJS Companyへのお問い合わせはこちらから。製品やサービスに関するご質問、お見積もり依頼などお気軽にお問い合わせください。">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/images/MJScompanyLogo.png">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/images/MJScompanyLogo.png" alt="MJS Company Logo">
+        </a>
+        <div class="logo-text">MJS Company</div>
+      </div>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="https://karustep.netlify.app/" target="_blank">KaruStep</a></li>
+          <li><a href="about.html">会社情報</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Title -->
+  <section class="page-title">
+    <div class="container">
+      <h1>お問い合わせ</h1>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>お問い合わせフォーム</h2>
+        <p>製品やサービスに関するご質問、お見積もり依頼など、お気軽にお問い合わせください。</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3>お問い合わせ先</h3>
+          <p>メールアドレス: <a href="mailto:mjsc0mpa2@gmail.com">mjsc0mpa2@gmail.com</a></p>
+          <p>2〜3営業日以内にご返信いたします。</p>
+        </div>
+        <div class="contact-form">
+          <form id="contact-form" action="https://formspree.io/f/mjsc0mpa2@gmail.com" method="POST">
+            <div class="form-group">
+              <label for="name">お名前 <span class="required">*</span></label>
+              <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="email">メールアドレス <span class="required">*</span></label>
+              <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">件名</label>
+              <input type="text" id="subject" name="subject" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="message">お問い合わせ内容 <span class="required">*</span></label>
+              <textarea id="message" name="message" class="form-control" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="facility-type">施設種別</label>
+              <select id="facility-type" name="facility-type" class="form-control">
+                <option value="">選択してください</option>
+                <option value="hospital">病院</option>
+                <option value="clinic">クリニック</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="implementation-period">導入予定時期</label>
+              <select id="implementation-period" name="implementation-period" class="form-control">
+                <option value="">選択してください</option>
+                <option value="1month">1ヶ月以内</option>
+                <option value="3months">3ヶ月以内</option>
+                <option value="6months">6ヶ月以内</option>
+                <option value="undecided">未定</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">送信する</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3>MJS Company, LLC</h3>
+          <p>〒371-0000 群馬県前橋市</p>
+          <p>設立：令和4年12月22日</p>
+          <p>代表：丸山 詩歩</p>
+        </div>
+        <div class="footer-links">
+          <h3>リンク</h3>
+          <ul>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="https://karustep.netlify.app/" target="_blank">KaruStep</a></li>
+            <li><a href="about.html">会社情報</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="privacy.html">プライバシーポリシー</a></li>
+            <li><a href="terms.html">利用規約</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2023-2025 MJS Company, LLC. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
