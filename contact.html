@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | MJSカンパニー</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/MJScompanyLogo.png">
+    <meta name="description" content="MJSカンパニーへのお問い合わせページ。製品やサービスに関するお問い合わせはこちらからお願いします。">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="/">
+                        <img src="assets/images/MJScompanyLogo.png" alt="MJSカンパニーロゴ" class="logo-img">
+                        <span class="logo-text">合同会社MJSカンパニー</span>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <button class="nav-toggle" aria-label="メニューを開く">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a href="/">ホーム</a></li>
+                        <li><a href="/products/karustep.html">カルステップ</a></li>
+                        <li><a href="/about.html">会社情報</a></li>
+                        <li><a href="/contact.html">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>お問い合わせ</h1>
+            </div>
+        </section>
+
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="contact-intro">
+                    <p>製品やサービスに関するお問い合わせは、以下のフォームからお願いいたします。</p>
+                    <p>通常2〜3営業日以内にご返信いたします。</p>
+                </div>
+                
+                <form id="contact-form" class="contact-form" action="https://formspree.io/f/mbloroko" method="POST">
+                    <div class="form-group">
+                        <label for="name">お名前 <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">メールアドレス <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="facility-type">施設種別</label>
+                        <select id="facility-type" name="facility-type">
+                            <option value="">選択してください</option>
+                            <option value="hospital">病院</option>
+                            <option value="clinic">クリニック</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="implementation-period">導入予定時期</label>
+                        <select id="implementation-period" name="implementation-period">
+                            <option value="">選択してください</option>
+                            <option value="1-3months">1〜3ヶ月以内</option>
+                            <option value="3-6months">3〜6ヶ月以内</option>
+                            <option value="6-12months">6〜12ヶ月以内</option>
+                            <option value="undecided">未定</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">お問い合わせ内容 <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">送信する</button>
+                    </div>
+                </form>
+                
+                <div class="contact-info">
+                    <h3>その他のお問い合わせ方法</h3>
+                    <p>メールでのお問い合わせ: <a href="mailto:mjsc0mpa2@gmail.com">mjsc0mpa2@gmail.com</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/MJScompanyLogo.png" alt="MJSカンパニーロゴ" class="footer-logo-img">
+                    <div class="footer-company-info">
+                        <p class="footer-company-name">合同会社MJSカンパニー</p>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="/">ホーム</a></li>
+                        <li><a href="/products/karustep.html">カルステップ</a></li>
+                        <li><a href="/about.html">会社情報</a></li>
+                        <li><a href="/contact.html">お問い合わせ</a></li>
+                        <li><a href="/privacy.html">プライバシーポリシー</a></li>
+                        <li><a href="/security.html">セキュリティポリシー</a></li>
+                        <li><a href="/terms.html">利用規約</a></li>
+                        <li><a href="/tokusho.html">特定商取引法に基づく表記</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2022-2025 合同会社MJSカンパニー. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
