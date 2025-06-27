@@ -3,11 +3,248 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>お問い合わせ - MJS Company, LLC</title>
-  <meta name="description" content="MJS Companyへのお問い合わせはこちらから。製品やサービスに関するご質問、お見積もり依頼などお気軽にお問い合わせください。">
+  <title>Contact - MJS Company, LLC</title>
+  <meta name="description" content="MJS Companyへのご連絡はこちらから。製品やサービスに関するご質問、お見積もり依頼などお気軽にご連絡ください。">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="assets/images/MJScompanyLogo.png">
+  <style>
+    /* Page Title Section */
+    .page-title {
+      background: linear-gradient(135deg, #f6f9fc 0%, #e9f4ff 100%);
+      padding: 8rem 0 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .page-title::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -25%;
+      width: 70%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0, 102, 255, 0.05) 0%, transparent 70%);
+      animation: float 20s ease-in-out infinite;
+    }
+    
+    .page-title h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    .page-title p {
+      font-size: 1.1rem;
+      color: var(--gray-600);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+    
+    /* Contact Section */
+    .contact-section {
+      padding: 5rem 0;
+      background: var(--white);
+    }
+    
+    .contact-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .contact-info {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      padding: 2rem 3rem;
+      border-radius: 20px 20px 0 0;
+      text-align: center;
+      border-bottom: 3px solid var(--primary-color);
+    }
+    
+    .contact-info h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    
+    .contact-info h3::before {
+      content: '📧';
+      font-size: 1.2rem;
+    }
+    
+    .contact-info p {
+      color: var(--gray-700);
+      line-height: 1.8;
+      margin-bottom: 0.8rem;
+      font-size: 1rem;
+    }
+    
+    .contact-info .email-link {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: var(--transition-base);
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 8px;
+      background: rgba(0, 102, 255, 0.1);
+    }
+    
+    .contact-info .email-link:hover {
+      color: var(--primary-dark);
+      background: rgba(0, 102, 255, 0.2);
+      transform: translateY(-1px);
+    }
+    
+    .response-time {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      font-style: italic;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      display: inline-block;
+    }
+    
+    /* Form Styling */
+    .contact-form {
+      background: var(--white);
+      padding: 3rem;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-group {
+      margin-bottom: 1.8rem;
+      position: relative;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      transition: var(--transition-base);
+      font-size: 0.95rem;
+    }
+    
+    .form-group label .required {
+      color: var(--danger-color);
+      margin-left: 2px;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 1.2rem 1.5rem;
+      border: 2px solid var(--gray-200);
+      border-radius: 12px;
+      font-family: var(--font-main);
+      font-size: 1rem;
+      transition: var(--transition-base);
+      background: var(--gray-50);
+      box-sizing: border-box;
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      background: var(--white);
+      box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.1);
+      transform: translateY(-1px);
+    }
+    
+    select.form-control {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1.5rem center;
+      padding-right: 3rem;
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .btn[type="submit"] {
+      width: 100%;
+      padding: 1.4rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background: var(--gradient-primary);
+      border: none;
+      border-radius: 12px;
+      color: var(--white);
+      cursor: pointer;
+      transition: var(--transition-base);
+      margin-top: 1rem;
+    }
+    
+    .btn[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 102, 255, 0.3);
+    }
+    
+    .btn[type="submit"]:active {
+      transform: translateY(0);
+    }
+    
+    @media (max-width: 768px) {
+      .page-title {
+        padding: 6rem 0 3rem;
+      }
+      
+      .page-title h1 {
+        font-size: 2rem;
+      }
+      
+      .page-title p {
+        font-size: 1rem;
+        max-width: 90%;
+      }
+      
+      .contact-section {
+        padding: 3rem 0;
+      }
+      
+      .contact-content {
+        max-width: 95%;
+        margin: 0 auto;
+      }
+      
+      .contact-info {
+        padding: 1.5rem 2rem;
+      }
+      
+      .contact-info h3 {
+        font-size: 1.2rem;
+      }
+      
+      .contact-form {
+        padding: 2rem 1.5rem;
+      }
+      
+      .form-control {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -22,7 +259,7 @@
       <nav>
         <ul class="nav-menu">
           <li><a href="index.html">ホーム</a></li>
-          <li><a href="https://karustep.netlify.app/" target="_blank">KaruStep</a></li>
+          <li><a href="https://karustep.netlify.app/" target="_blank">カルステップ</a></li>
           <li><a href="about.html">会社情報</a></li>
           <li><a href="contact.html">お問い合わせ</a></li>
         </ul>
@@ -39,21 +276,18 @@
   <section class="page-title">
     <div class="container">
       <h1>お問い合わせ</h1>
+      <p>製品やサービスに関するご質問など、お気軽にご連絡ください。</p>
     </div>
   </section>
 
   <!-- Contact Form -->
   <section class="contact-section">
     <div class="container">
-      <div class="section-title">
-        <h2>お問い合わせフォーム</h2>
-        <p>製品やサービスに関するご質問、お見積もり依頼など、お気軽にお問い合わせください。</p>
-      </div>
       <div class="contact-content">
         <div class="contact-info">
-          <h3>お問い合わせ先</h3>
-          <p>メールアドレス: <a href="mailto:mjsc0mpa2@gmail.com">mjsc0mpa2@gmail.com</a></p>
-          <p>2〜3営業日以内にご返信いたします。</p>
+          <h3>連絡先情報</h3>
+          <p>メールアドレス: <a href="mailto:mjsc0mpa2@gmail.com" class="email-link">mjsc0mpa2@gmail.com</a></p>
+          <div class="response-time">2〜3営業日以内にご返信いたします</div>
         </div>
         <div class="contact-form">
           <form id="contact-form" action="https://formspree.io/f/mbloroko" method="POST">
@@ -115,7 +349,7 @@
           <h3>リンク</h3>
           <ul>
             <li><a href="index.html">ホーム</a></li>
-            <li><a href="https://karustep.netlify.app/" target="_blank">KaruStep</a></li>
+            <li><a href="https://karustep.netlify.app/" target="_blank">カルステップ</a></li>
             <li><a href="about.html">会社情報</a></li>
             <li><a href="contact.html">お問い合わせ</a></li>
             <li><a href="privacy.html">プライバシーポリシー</a></li>

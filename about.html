@@ -4,10 +4,221 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>会社情報 - MJS Company, LLC</title>
-  <meta name="description" content="MJS Companyは、救急科専門医が創るAI音声記録プラットフォームKaruStepを提供する医療IT企業です。">
+  <meta name="description" content="MJS Companyは、救急科専門医が創るAI音声記録プラットフォーム カルステップを提供する医療IT企業です。">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="assets/images/MJScompanyLogo.png">
+  <style>
+    /* Page Title Section */
+    .page-title {
+      background: linear-gradient(135deg, #f6f9fc 0%, #e9f4ff 100%);
+      padding: 8rem 0 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .page-title::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -25%;
+      width: 70%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0, 102, 255, 0.05) 0%, transparent 70%);
+      animation: float 20s ease-in-out infinite;
+    }
+    
+    .page-title h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    /* Company Overview Section */
+    .company-overview {
+      padding: 5rem 0;
+      background: var(--white);
+    }
+    
+    .info-table {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    
+    .info-table tr {
+      border-bottom: 1px solid var(--gray-100);
+      transition: var(--transition-base);
+    }
+    
+    .info-table tr:last-child {
+      border-bottom: none;
+    }
+    
+    .info-table tr:hover {
+      background: var(--gray-50);
+    }
+    
+    .info-table th {
+      background: var(--gradient-light);
+      color: var(--gray-700);
+      font-weight: 600;
+      text-align: left;
+      padding: 1.5rem;
+      width: 30%;
+      font-size: 0.95rem;
+    }
+    
+    .info-table td {
+      padding: 1.5rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    
+    .info-table td ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .info-table td ul li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .info-table td ul li::before {
+      content: '▶';
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-size: 0.8rem;
+    }
+    
+    /* Mission Section */
+    .mission {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      padding: 5rem 0;
+      position: relative;
+    }
+    
+    .mission-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .mission-text {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+    
+    .mission-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--gray-700);
+      margin-bottom: 1.5rem;
+    }
+    
+    .mission-text p:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* Business Section */
+    .business {
+      padding: 5rem 0;
+      background: var(--white);
+    }
+    
+    .business-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    
+    .business-item {
+      background: var(--gray-50);
+      padding: 2.5rem;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition-base);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+    
+    .business-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--gradient-primary);
+      transform: scaleY(0);
+      transition: var(--transition-base);
+    }
+    
+    .business-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .business-item:hover::before {
+      transform: scaleY(1);
+    }
+    
+    .business-item h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 1rem;
+    }
+    
+    .business-item p {
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    
+    @media (max-width: 768px) {
+      .page-title h1 {
+        font-size: 2rem;
+      }
+      
+      .info-table th,
+      .info-table td {
+        padding: 1rem;
+      }
+      
+      .info-table th {
+        width: 35%;
+      }
+      
+      .mission-text {
+        padding: 2rem;
+      }
+      
+      .business-item {
+        padding: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -22,7 +233,7 @@
       <nav>
         <ul class="nav-menu">
           <li><a href="index.html">ホーム</a></li>
-          <li><a href="https://karustep.netlify.app/" target="_blank">KaruStep</a></li>
+          <li><a href="https://karustep.netlify.app/" target="_blank">カルステップ</a></li>
           <li><a href="about.html">会社情報</a></li>
           <li><a href="contact.html">お問い合わせ</a></li>
         </ul>
@@ -64,13 +275,13 @@
           </tr>
           <tr>
             <th>代表者</th>
-            <td>丸山 詩歩</td>
+            <td>丸山 詩歩, 丸山 潤</td>
           </tr>
           <tr>
             <th>事業内容</th>
             <td>
               <ul>
-                <li>AI音声記録プラットフォーム「KaruStep」の販売・導入支援</li>
+                <li>AI音声記録プラットフォーム「カルステップ」の販売・導入支援</li>
                 <li>医療記事制作・監修</li>
                 <li>クリニックDX化支援</li>
               </ul>
@@ -105,8 +316,8 @@
       <div class="business-content">
         <div class="business-item">
           <h3>カルステップ販売</h3>
-          <p>AI音声記録プラットフォーム「KaruStep」の販売・導入支援を行っています。診察音声を自動で要約し、スプレッドシートに記録する機能により、医療従事者の記録業務の負担を軽減します。</p>
-          <a href="https://karustep.netlify.app/" class="btn btn-primary" target="_blank">KaruStepの詳細を見る</a>
+          <p>AI音声記録プラットフォーム「カルステップ」の販売・導入支援を行っています。診察音声を自動で要約し、スプレッドシートに記録する機能により、医療従事者の記録業務の負担を軽減します。</p>
+          <a href="https://karustep.netlify.app/" class="btn btn-primary" target="_blank">カルステップの詳細を見る</a>
         </div>
         <div class="business-item">
           <h3>医療記事制作・監修</h3>
@@ -134,7 +345,7 @@
           <h3>リンク</h3>
           <ul>
             <li><a href="index.html">ホーム</a></li>
-            <li><a href="https://karustep.netlify.app/" target="_blank">KaruStep</a></li>
+            <li><a href="https://karustep.netlify.app/" target="_blank">カルステップ</a></li>
             <li><a href="about.html">会社情報</a></li>
             <li><a href="contact.html">お問い合わせ</a></li>
             <li><a href="privacy.html">プライバシーポリシー</a></li>

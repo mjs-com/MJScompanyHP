@@ -8,6 +8,149 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="icon" href="assets/images/MJScompanyLogo.png">
+  <style>
+    /* Page Title Section */
+    .page-title {
+      background: linear-gradient(135deg, #f6f9fc 0%, #e9f4ff 100%);
+      padding: 8rem 0 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .page-title::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -25%;
+      width: 70%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0, 102, 255, 0.05) 0%, transparent 70%);
+      animation: float 20s ease-in-out infinite;
+    }
+    
+    .page-title h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    /* Privacy Policy Section */
+    .privacy-policy {
+      padding: 5rem 0;
+      background: var(--white);
+    }
+    
+    .policy-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .policy-section {
+      background: var(--gray-50);
+      border-radius: 20px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      transition: var(--transition-base);
+    }
+    
+    .policy-section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+    
+    .policy-section h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+    
+    .policy-section h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 100%;
+      background: var(--gradient-primary);
+      border-radius: 2px;
+    }
+    
+    .policy-section p {
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    
+    .policy-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+    
+    .policy-section ul li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 0.8rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    
+    .policy-section ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0.5rem;
+      color: var(--primary-color);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    
+    .policy-section a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition-base);
+    }
+    
+    .policy-section a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+    
+    .policy-section:last-child {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border: 2px solid var(--primary-light);
+      text-align: center;
+    }
+    
+    .policy-section:last-child p {
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    
+    @media (max-width: 768px) {
+      .page-title h1 {
+        font-size: 2rem;
+      }
+      
+      .policy-section {
+        padding: 2rem;
+      }
+      
+      .policy-section h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -22,7 +165,7 @@
       <nav>
         <ul class="nav-menu">
           <li><a href="index.html">ホーム</a></li>
-          <li><a href="https://karustep.netlify.app/" target="_blank">KaruStep</a></li>
+          <li><a href="https://karustep.netlify.app/" target="_blank">カルステップ</a></li>
           <li><a href="about.html">会社情報</a></li>
           <li><a href="contact.html">お問い合わせ</a></li>
         </ul>
@@ -135,7 +278,7 @@
           <h3>リンク</h3>
           <ul>
             <li><a href="index.html">ホーム</a></li>
-            <li><a href="https://karustep.netlify.app/" target="_blank">KaruStep</a></li>
+            <li><a href="https://karustep.netlify.app/" target="_blank">カルステップ</a></li>
             <li><a href="about.html">会社情報</a></li>
             <li><a href="contact.html">お問い合わせ</a></li>
             <li><a href="privacy.html">プライバシーポリシー</a></li>
