@@ -76,30 +76,48 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       if (isValid) {
-        // In a real application, you would send the form data to a server here
-        // For now, we'll just show a success message
         const formData = new FormData(contactForm);
-        const formValues = {};
         
-        for (let [key, value] of formData.entries()) {
-          formValues[key] = value;
-        }
-        
-        // Log form data to console (for demonstration)
-        console.log('Form submitted:', formValues);
-        
-        // Show success message
-        const successMessage = document.createElement('div');
-        successMessage.className = 'alert alert-success';
-        successMessage.textContent = 'お問い合わせありがとうございます。2〜3営業日以内にご返信いたします。';
-        
-        contactForm.reset();
-        contactForm.parentNode.insertBefore(successMessage, contactForm);
-        
-        // Remove success message after 5 seconds
-        setTimeout(() => {
-          successMessage.remove();
-        }, 5000);
+        fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          }
+          throw new Error('Network response was not ok.');
+        })
+        .then(data => {
+          // Show success message
+          const successMessage = document.createElement('div');
+          successMessage.className = 'alert alert-success';
+          successMessage.textContent = 'お問い合わせありがとうございます。2〜3営業日以内にご返信いたします。';
+          
+          contactForm.reset();
+          contactForm.parentNode.insertBefore(successMessage, contactForm);
+          
+          // Remove success message after 5 seconds
+          setTimeout(() => {
+            successMessage.remove();
+          }, 5000);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          const errorMessage = document.createElement('div');
+          errorMessage.className = 'alert alert-error';
+          errorMessage.textContent = 'エラーが発生しました。後でもう一度お試しください。';
+          
+          contactForm.parentNode.insertBefore(errorMessage, contactForm);
+          
+          // Remove error message after 5 seconds
+          setTimeout(() => {
+            errorMessage.remove();
+          }, 5000);
+        });
       }
     });
   }
